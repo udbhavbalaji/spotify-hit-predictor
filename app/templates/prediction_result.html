@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="text-content text-container">
+    <div class="heading">
+        <h1>
+            {{ title }}
+        </h1>
+    </div>
+    <br>
+    <br>
+    <div class="cover-image">
+        <img id="track-cover" src="{{ model.image_url }}" alt="Track Cover Image">
+    </div>
+    <div class="track-details">
+        <h2>{{ model.track_name }}</h2>
+        <p>{{ model.artist }}</p>
+        <p>{{ model.album }}</p>
+        <br>
+        <br>
+        <p>{{ model.output }}</p>
+    </div>
+    
+    <div class="create-button width-150">
+        <a href="{{ model.song_url }}">
+            Listen on Spotify
+        </a>
+    </div>
+    <div class="create-button width-100">
+        <a href="{{ url_for('prediction') }}">
+            Try Again
+        </a>
+    </div>
+</div>
+{% endblock content %}
+{% block footer_pos %}
+<div class="footer">
+{% endblock footer_pos %}

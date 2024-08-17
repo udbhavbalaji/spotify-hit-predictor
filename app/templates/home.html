@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="text-content text-container">
+    <div class="heading">
+        <h1>
+            Welcome to Song Savvy!
+        </h1>
+    </div>
+    <div class="paratext">
+        <p>
+            Ever wondered if your favorite song has what it takes to top the charts? Click below, and enter a Spotify song link, and SongSavvy will analyze its features to predict whether it’s destined to be a hit or just another flop. Get ready to discover the future of your music!
+            <br/>
+            <br/>
+        </p>
+    </div>
+    <div class="create-button width-100">
+        <a href="{{ url_for('prediction') }}">
+            Get Started
+        </a>
+    </div>
+</div>
+{% endblock content %}
+{% block footer_pos %}
+<div class="footer-fixed">
+{% endblock footer_pos %}
