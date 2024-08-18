@@ -163,6 +163,5 @@ cython_debug/
 
 # VSCode Workspace settins
 .vscode
-run.py
 test.py
 preprocessing_ref.ipynb

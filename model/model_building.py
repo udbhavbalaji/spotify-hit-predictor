@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.utils import shuffle
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
@@ -59,7 +59,7 @@ param_grid_mlp = {
     'clf__alpha': [0.0001, 0.001, 0.01, 0.1]
 }
 
-grid_mlp = GridSearchCV(clf_mlp, param_grid_mlp, cv=5, n_jobs=-1, verbose=0, scoring='accuracy')
+grid_mlp = RandomizedSearchCV(clf_mlp, param_grid_mlp, cv=5, n_jobs=-1, verbose=0, scoring='accuracy')
 
 grid_mlp.fit(X_train, y_train)
 
