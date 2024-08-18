@@ -26,14 +26,17 @@ def about():
 def prediction_result():
     model_output = {}
     features = ['artist','danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness',
-    'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms', 'time_signature', 'chorus_hit','sections']
+    'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms', 'time_signature', 'chorus_hit','sections', 'num_artists', 'release_type']
     song_url = request.args.get('song_url')
     song_id = get_id_from_url(song_url)
     track_features = get_track_features(song_id)
     analysis_attrs = get_required_track_analysis(song_id)
-    artist, track_name, album, image_url = get_track_info(song_id)
+    # artist, track_name, album, image_url = get_track_info(song_id)
+    artists, track_name, album, image_url, release_type = get_track_info(song_id)
+    num_artists = len(artists)
+    artist = artists[0]['name']
     
-    input_list = [artist] + track_features + analysis_attrs
+    input_list = [artist] + track_features + analysis_attrs + [num_artists, release_type]
     
     model_input = {}
     

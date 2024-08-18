@@ -20,10 +20,7 @@ def get_id_from_url(song_url):
 
 def get_track_features(song_id):
     track_features = spotify.audio_features(tracks=[song_id])[0]
-    # ['danceability', 'energy', 'key', 'loudness',
-    #    'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
-    #    'valence', 'tempo', 'duration_ms', 'time_signature', 'chorus_hit',
-    #    'sections', 'target']
+    
     features = ['danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness',
     'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms', 'time_signature']   
 
@@ -51,5 +48,7 @@ def get_track_info(song_id):
     track = spotify.track(song_id)
     image_url = track['album']['images'][0]['url']
     album_name = track['album']['name']
+    release_type = track['album']['album_type']
     track_name = track['name']
-    return track['artists'][0]['name'], track_name, album_name, image_url
+    # return track['artists'][0]['name'], track_name, album_name, image_url, release_type
+    return track['artists'], track_name, album_name, image_url, release_type
