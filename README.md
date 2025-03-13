@@ -14,6 +14,13 @@
     * **alpha**: *0.01*
     * **activation**: *logistic*
 
+## Documentation
+
+* **Dataset (Kaggle)**: [https://www.kaggle.com/datasets/theoverman/the-spotify-hit-predictor-dataset]
+* **Logistic Regression (scikit-learn)**: [https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html]
+* **Logistic Regression (scikit-learn)**: [https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html]
+* **Random Forest Classifier (scikit-learn)**: [https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html]
+* **Multi-Layered Perceptron (scikit-learn)**: [https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html]
 
 Any feedback is welcome and appreciated!
 
