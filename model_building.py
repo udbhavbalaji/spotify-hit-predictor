@@ -11,7 +11,7 @@ import pickle
 
 data_df = pd.read_csv('data/processed/tracks.csv')
 
-data_df = shuffle(data_df)
+data_df: pd.DataFrame = shuffle(data_df)
 data_df.reset_index(inplace=True, drop=True)
 
 data_df.drop_duplicates(keep='first', inplace=True)
